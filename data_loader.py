@@ -10,6 +10,10 @@ import streamlit as st
 from config import PRODUCT_FACTORY_MAP
 
 
+df_test = pd.read_csv("Nassau_Candy_Distributor.csv", nrows=5)
+print(df_test[["Order Date", "Ship Date"]].to_string())
+print(df_test[["Order Date", "Ship Date"]].dtypes)
+
 def load_and_prepare_data(filepath: str) -> pd.DataFrame:
     """
     Load the Nassau Candy CSV, clean it, and engineer all required features.
