@@ -48,7 +48,7 @@ def load_and_prepare_data(filepath: str) -> pd.DataFrame:
 
     # ── 3. Date parsing & validation ───────────────────────────────────────────
     for col in ["Order Date", "Ship Date"]:
-        df[col] = pd.to_datetime(df[col], infer_datetime_format=True, errors="coerce")
+        df[col] = pd.to_datetime(df[col],errors="coerce")
 
     # Drop rows with unparseable dates
     n_before = len(df)
