@@ -47,21 +47,10 @@ def load_and_prepare_data(filepath: str) -> pd.DataFrame:
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns})
 
     # ── 3. Date parsing & validation ───────────────────────────────────────────
-    # for col in ["Order Date", "Ship Date"]:
-    #     df[col] = pd.to_datetime(df[col],errors="coerce")
     for col in ["Order Date", "Ship Date"]:
-    # Handle Excel serial number dates (e.g. 45292)
-     if df[col].dtype in ["int64", "float64"] or pd.to_numeric(df[col], errors="coerce").notna().mean() > 0.8:
-        df[col] = pd.to_numeric(df[col], errors="coerce")
-        numeric_mask = df[col].notna() & (df[col] > 40000)
-        df.loc[numeric_mask, col] = pd.to_datetime(
-            df.loc[numeric_mask, col], unit="D", origin="1899-12-30"
-        )
-        df[col] = pd.to_datetime(df[col], errors="coerce")
-    else:
-        df[col] = pd.to_datetime(df[col], errors="coerce")
+        df[col] = pd.to_datetime(df[col],dayfirst=True,errors="coerce")
+    
 
-        
     # Drop rows with unparseable dates
     n_before = len(df)
     df = df.dropna(subset=["Order Date", "Ship Date"])
