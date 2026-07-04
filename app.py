@@ -80,7 +80,7 @@ selected_modes = st.sidebar.multiselect("Ship Mode", all_modes, default=all_mode
 
 # Lead-time threshold slider
 lead_time_threshold = st.sidebar.slider(
-    "Delay Threshold (days)", min_value=1, max_value=30, value=7,
+    "Delay Threshold (days)", min_value=100, max_value=2000, value=1300,
     help="Orders with lead time above this value are considered delayed."
 )
 

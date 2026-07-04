@@ -52,9 +52,8 @@ def load_and_prepare_data(filepath: str) -> pd.DataFrame:
 
     # ── 3. Date parsing & validation ───────────────────────────────────────────
     for col in ["Order Date", "Ship Date"]:
-        df[col] = pd.to_datetime(df[col],dayfirst=True,errors="coerce")
+        df[col] = pd.to_datetime(df[col],format="%d-%m-%Y",errors="coerce")
     
-
     # Drop rows with unparseable dates
     n_before = len(df)
     df = df.dropna(subset=["Order Date", "Ship Date"])
@@ -66,7 +65,7 @@ def load_and_prepare_data(filepath: str) -> pd.DataFrame:
     df["Lead Time (Days)"] = (df["Ship Date"] - df["Order Date"]).dt.days
 
     # Remove negative or zero lead times (data errors)
-    df = df[df["Lead Time (Days)"] > 0]
+    df = df[df["Lead Time (Days)"] > 100]
 
     # ── 5. Factory assignment ──────────────────────────────────────────────────
     df["Factory"] = df["Product Name"].map(PRODUCT_FACTORY_MAP)
