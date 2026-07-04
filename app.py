@@ -47,8 +47,8 @@ def get_data():
 df_raw = get_data()
 
 # ── Sidebar Filters ────────────────────────────────────────────────────────────
-st.sidebar.image("https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Nassau_Candy_logo.svg/200px-Nassau_Candy_logo.svg.png",
-                 use_container_width=True, caption="Nassau Candy Distributor")
+# st.sidebar.image("https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Nassau_Candy_logo.svg/200px-Nassau_Candy_logo.svg.png",
+#                  use_container_width=True, caption="Nassau Candy Distributor")
 
 st.sidebar.title("🔧 Filters")
 
