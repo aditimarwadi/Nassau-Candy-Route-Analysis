@@ -586,7 +586,7 @@ with tab5:
     sample_df["Gross Profit"] = sample_df["Gross Profit"].map("${:,.2f}".format)
 
     st.dataframe(
-        sample_df.style.applymap(
+        sample_df.style.map(
             lambda v: "background-color:#FFDDC1" if v is True else "",
             subset=["Delayed"]
         ),
