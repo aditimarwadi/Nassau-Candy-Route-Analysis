@@ -90,6 +90,12 @@ streamlit run app.py
 - Date fields are parsed with `infer_datetime_format=True` to handle
   mixed format CSVs gracefully.
 
+## Project Deliverables
+
+- 🔗 Research Paper: [https://docs.google.com/document/d/1gwLAPBzUdIkSQ2BOSSM7EZVgTFcpiB7O/edit?usp=drivesdk&ouid=105635979916499483150&rtpof=true&sd=true](docs/research_paper.pdf)
+- 🔗 Executive Summary: [https://docs.google.com/document/d/1ljQfkmvJmhstuP4za0MEsIkziVl521_u/edit?usp=drivesdk&ouid=105635979916499483150&rtpof=true&sd=true](docs/executive_summary.pdf)
+- 🔗 Live Dashboard: [https://shipping-route-analysis.streamlit.app/]
+- 🔗 Github: [https://github.com/aditimarwadi/Nassau-Candy-Route-Analysis]
 
 ## 👩‍💻 Author
 
